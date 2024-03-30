@@ -1,0 +1,12 @@
+<section class="prices">
+  <div *ngFor="let product of products" class="product">
+    <div class="name">{{product.name}}</div>
+    <div>{{product.price}}$</div>
+  </div>
+</section>
+<section class="change-prices">
+  <label *ngFor="let product of newPrices; let idx = index">
+    {{product.name}}
+    <input type="number" [(ngModel)]="product.price" (keydown)="onChanges(idx, $event)">
+  </label>
+</section>
